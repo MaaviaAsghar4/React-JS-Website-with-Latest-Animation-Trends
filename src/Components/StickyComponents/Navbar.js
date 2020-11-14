@@ -44,9 +44,6 @@ const Navbar = () => {
                             <Link className={classes.link} to='/portfolio'>Portfolio</Link>
                         </Typography>
                         <Typography className={classes.navbarList}>
-                            <Link className={classes.link} to='/about'>About</Link>
-                        </Typography>
-                        <Typography className={classes.navbarList}>
                             <Link className={classes.link} to='/contact'>Contact</Link>
                         </Typography>
                     </div>

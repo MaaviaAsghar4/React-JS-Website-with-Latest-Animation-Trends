@@ -3,37 +3,83 @@ import { Typography, Grid, Box, Card, CardActionArea, CardMedia, CardContent, Ca
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import NearMeIcon from '@material-ui/icons/NearMe';
-import classified from '../../images/classified.png'
-import quiz from '../../images/quiz.png'
+import classified from '../../images/olx.png'
+import quiz from '../../images/quiz.jpg'
 import mutify from '../../images/mutify.png'
 
 const useStyles = makeStyles((theme) => ({
+    container: {
+        backgroundColor: '#f7f7f7',
+        padding: '20px 20px',
+    },
+    title: {
+        fontSize: '2.4rem',
+        fontWeight: 'bold',
+        color: '#00539CFF',
+        textAlign: 'center',
+        margin: '100px auto 30px auto',
+    },
     card: {
-        maxWidth: 300,
-
+        maxWidth: '100%',
     },
     media: {
         height: 200,
+    },
+    project: {
+        fontWeight: 'bold',
+        color: '#00539CFF',
+        fontSize: '1.4rem',
+        marginBottom: '5px'
+    },
+    detail: {
+        color: '#0063B2FF',
+        fontSize: '0.8rem'
+    },
+    icon: {
+        color: '#f7f7f7'
+    },
+    btn: {
+        background: 'linear-gradient(180deg, #00539CFF, #0063B2FF)'
+    },
+    ahref: {
+        textDecoration: 'none',
+        color: '#f7f7f7',
+        fontWeight: 'bold'
+    },
+    linkBtn: {
+        border: '2px solid #00539CFF',
+        width: '150px',
+        margin: '40px auto',
+        placeItems: 'center',
+        background: 'linear-gradient(180deg, #00539CFF, #0063B2FF)'
+    },
+    link: {
+        textDecoration: 'none',
+        color: '#f7f7f7',
+        fontWeight: 'bold'
+    },
+    btnContainer: {
+        textAlign: 'center'
     }
 }))
 
 const Project = () => {
     const classes = useStyles()
     return (
-        <Box>
+        <Box maxWidth='lg' className={classes.container}>
             <Typography className={classes.title}>
                 Projects
             </Typography>
-            <Grid container>
-                <Grid item xs={12} sm={4} >
+            <Grid container spacing={3} direction="row" justify="center" alignItems="center">
+                <Grid item xs={12} sm={6} md={4} >
                     <Card className={classes.card}>
                         <CardActionArea>
-                            <CardMedia component='img' image={classified} title='Classified Ad website' className={classes.media}/>
+                            <CardMedia component='img' image={classified} title='Classified Ad website' className={classes.media} />
                             <CardContent>
                                 <Typography className={classes.project}>
                                     OLX
                                 </Typography>
-                                <Typography  className={classes.detail}>
+                                <Typography className={classes.detail}>
                                     OLX is a classified Ad website that allow users to display their product ads and get buyers instantly.
                                 </Typography>
                             </CardContent>
@@ -45,16 +91,16 @@ const Project = () => {
                         </CardActions>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={4} >
+                <Grid item xs={12} sm={6} md={4} >
                     <Card className={classes.card}>
                         <CardActionArea>
-                            <CardMedia  className={classes.media} component='img' image={mutify} title='Mutify Website' />
+                            <CardMedia className={classes.media} component='img' image={mutify} title='Mutify Website' />
                             <CardContent>
                                 <Typography className={classes.project}>
                                     Mutify
                                 </Typography>
                                 <Typography className={classes.detail}>
-                                    Mutify is a product that helps apple user to control their microphone from anywhere.
+                                    Mutify is a product that helps apple user to control their microphone from anywhere at their comfort.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -65,7 +111,7 @@ const Project = () => {
                         </CardActions>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={4} >
+                <Grid item xs={12} sm={6} md={4} >
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia className={classes.media} component='img' image={quiz} title='Quiz App' />
@@ -74,7 +120,7 @@ const Project = () => {
                                     Quiz App
                                 </Typography>
                                 <Typography className={classes.detail}>
-                                    Quiz Application developed in JavaScript.
+                                    Quiz Application developed in Vanilla JS with operations of object oriented programming.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -86,7 +132,9 @@ const Project = () => {
                     </Card>
                 </Grid>
             </Grid>
-            <Button className={classes.linkBtn} variant='container' endIcon={<NearMeIcon />}><Link className={classes.link} to='/portfolio'>More</Link></Button>
+            <Box className={classes.btnContainer}>
+                <Button className={classes.linkBtn} variant='container' endIcon={<NearMeIcon className={classes.icon} />}><Link className={classes.link} to='/portfolio'>More</Link></Button>
+            </Box>
         </Box>
     )
 }

@@ -1,9 +1,10 @@
 import React from 'react'
+import Cards from '../Components/PortfolioComponents/Cards'
 
 const Portfolio = () => {
     return (
         <div>
-            Portfolio
+            <Cards />
         </div>
     )
 }

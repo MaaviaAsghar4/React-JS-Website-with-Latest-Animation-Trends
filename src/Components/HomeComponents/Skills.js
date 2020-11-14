@@ -10,24 +10,24 @@ import React from 'react'
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        backgroundColor: '#f7f7f7',
-        padding: '100px 20px 10px 20px'
+        backgroundColor: '#101820ff',
+        padding: '100px 20px 50px 20px'
     },
     title: {
         fontSize: '2.4rem',
         fontWeight: 'bold',
-        color: '#00539CFF',
+        color: '#f7f7f7',
         textAlign: 'center',
     },
     info: {
         fontSize: '1.4rem',
-        color: '#0063B2FF',
+        color: '#f7f7f7',
         marginTop: '20px',
         textAlign: 'center'
     },
     skills: {
         fontSize: '1.1rem',
-        color: '#0063B2FF',
+        color: '#f7f7f7',
         marginTop: '20px',
         textAlign: 'center'
     },

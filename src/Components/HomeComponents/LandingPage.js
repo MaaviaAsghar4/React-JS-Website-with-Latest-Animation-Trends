@@ -36,7 +36,8 @@ const useStyles = makeStyles((theme)=>({
     },
     link: {
         color: '#f7f7f7',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        fontWeight: 'bold'
     },
     icon: {
         color: '#f7f7f7'

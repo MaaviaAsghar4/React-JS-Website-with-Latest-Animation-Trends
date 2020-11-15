@@ -133,7 +133,7 @@ const Project = () => {
                 </Grid>
             </Grid>
             <Box className={classes.btnContainer}>
-                <Button className={classes.linkBtn} variant='container' endIcon={<NearMeIcon className={classes.icon} />}><Link className={classes.link} to='/portfolio'>More</Link></Button>
+                <Button className={classes.linkBtn} variant='contained' endIcon={<NearMeIcon className={classes.icon} />}><Link className={classes.link} to='/portfolio'>More</Link></Button>
             </Box>
         </Box>
     )

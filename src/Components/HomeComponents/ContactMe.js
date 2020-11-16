@@ -2,7 +2,9 @@ import { Grid, Paper, Typography, Button } from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import {makeStyles} from '@material-ui/core/styles'
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
-import React from 'react'
+import React, {useEffect} from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme)=>({
     container: {
@@ -40,9 +42,12 @@ const useStyles = makeStyles((theme)=>({
 
 const ContactMe = () => {
 
+    useEffect(()=>{
+        AOS.init({})
+    },[])
     const classes = useStyles();
     return (
-        <div className={classes.container}>
+        <div className={classes.container} data-aos='slide-left'>
             <Grid container>
                 <Grid item xs={12} sm={12} md={12}>
                     <Paper elevation={3} className={classes.main}>
@@ -52,7 +57,7 @@ const ContactMe = () => {
                         <Typography  className={classes.query2}>
                             Get in <strong>Touch Now</strong> to get high quality products and avail valuable discounts
                         </Typography>
-                        <Button variant='contained' endIcon={<PhoneIphoneIcon className={classes.icon}/>} className={classes.btn}><Link className={classes.link} to='/contact'>Contact Now</Link></Button>
+                        <Button data-aos='flip-down' variant='contained' endIcon={<PhoneIphoneIcon className={classes.icon}/>} className={classes.btn}><Link className={classes.link} to='/contact'>Contact Now</Link></Button>
                     </Paper>
                 </Grid>
             </Grid>

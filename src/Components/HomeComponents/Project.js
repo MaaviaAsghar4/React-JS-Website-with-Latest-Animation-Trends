@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Typography, Grid, Box, Card, CardActionArea, CardMedia, CardContent, CardActions, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
@@ -6,6 +6,8 @@ import NearMeIcon from '@material-ui/icons/NearMe';
 import classified from '../../images/olx.png'
 import quiz from '../../images/quiz.jpg'
 import mutify from '../../images/mutify.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -64,14 +66,18 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Project = () => {
+
+    useEffect(()=>{
+        AOS.init({})
+    },[])
     const classes = useStyles()
     return (
-        <Box maxWidth='lg' className={classes.container}>
+        <Box maxWidth='lg' className={classes.container} data-aos='zoom-in'>
             <Typography className={classes.title}>
                 Projects
             </Typography>
             <Grid container spacing={3} direction="row" justify="center" alignItems="center">
-                <Grid item xs={12} sm={6} md={4} >
+                <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' data-aos-delay='150'>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia component='img' image={classified} title='Classified Ad website' className={classes.media} />
@@ -91,7 +97,7 @@ const Project = () => {
                         </CardActions>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4} >
+                <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' data-aos-delay='250'>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia className={classes.media} component='img' image={mutify} title='Mutify Website' />
@@ -111,7 +117,7 @@ const Project = () => {
                         </CardActions>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4} >
+                <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' data-aos-delay='150'>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia className={classes.media} component='img' image={quiz} title='Quiz App' />
@@ -132,7 +138,7 @@ const Project = () => {
                     </Card>
                 </Grid>
             </Grid>
-            <Box className={classes.btnContainer}>
+            <Box className={classes.btnContainer} data-aos='flip-down'>
                 <Button className={classes.linkBtn} variant='contained' endIcon={<NearMeIcon className={classes.icon} />}><Link className={classes.link} to='/portfolio'>More</Link></Button>
             </Box>
         </Box>

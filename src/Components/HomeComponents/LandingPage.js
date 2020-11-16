@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Typography, Button, Box } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import NearMeIcon from '@material-ui/icons/NearMe';
 import { Link } from 'react-router-dom'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme)=>({
     landing: {
@@ -46,9 +48,12 @@ const useStyles = makeStyles((theme)=>({
 
 const LandingPage = () => {
 
+    useEffect(()=>{
+        AOS.init({})
+    },[])
     const classes = useStyles();
     return (
-        <Box>
+        <Box data-aos='slide-right' data-aos-easing="ease-in-out" data-aos-delay="50">
             <Box component='div' className={classes.landing}>
                 <Typography className={classes.salutation}>
                     Hi!

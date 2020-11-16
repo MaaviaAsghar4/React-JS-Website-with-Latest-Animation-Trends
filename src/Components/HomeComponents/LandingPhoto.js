@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Photo from '../../images/development-4536630.svg'
 import {makeStyles} from '@material-ui/core/styles'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme)=>({
     container: {
@@ -20,9 +22,12 @@ const useStyles = makeStyles((theme)=>({
 
 const LandingPhoto = () => {
 
+    useEffect(()=>{
+        AOS.init({})
+    },[])
     const classes = useStyles()
     return (
-        <div className={classes.container}>
+        <div className={classes.container} data-aos="slide-left" data-aos-easing='ease-in-out' data-aos-delay='100'>
             <img className={classes.avatar} src={Photo} alt='' />
         </div>
     )

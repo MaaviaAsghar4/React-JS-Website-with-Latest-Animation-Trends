@@ -1,11 +1,13 @@
 import { makeStyles } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Connect from '../Components/HomeComponents/Connect';
 import ContactMe from '../Components/HomeComponents/ContactMe';
 import LandingPage from '../Components/HomeComponents/LandingPage'
 import LandingPhoto from '../Components/HomeComponents/LandingPhoto'
 import Project from '../Components/HomeComponents/Project';
 import Skills from '../Components/HomeComponents/Skills';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme) => ({
     flex: {
@@ -28,11 +30,14 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
 
+    useEffect(()=>{
+        AOS.init({})
+    },[])
     const classes = useStyles();
     return (
         <div>
             <div className={classes.flex}>
-                <LandingPage />
+                <LandingPage/>
                 <LandingPhoto />
             </div>
             <Skills />

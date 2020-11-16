@@ -6,7 +6,9 @@ import react from '../../images/react2.png'
 import redux from '../../images/redux.png'
 import firebase from '../../images/firebase.png'
 import { makeStyles } from '@material-ui/core/styles'
-import React from 'react'
+import React, {useEffect} from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -46,9 +48,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Skills = () => {
 
+    useEffect(()=>{
+        AOS.init({})
+    },[])
+
     const classes = useStyles()
     return (
-        <Box component='div'>
+        <Box component='div' data-aos='zoom-in'>
             <Box className={classes.container}>
                 <Box>
                     <Typography className={classes.title}>

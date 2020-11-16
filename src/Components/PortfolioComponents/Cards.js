@@ -16,7 +16,9 @@ import chatreact from '../../images/chatreact.png'
 import totoreact from '../../images/totoreact.png'
 import stopwatch from '../../images/stopwatch.png'
 import calculator from '../../images/calculator.jpeg'
-import React from 'react'
+import React, {useEffect} from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const useStyles = makeStyles({
     container: {
@@ -99,20 +101,23 @@ const useStyles = makeStyles({
     }
 })
 const Cards = () => {
+    useEffect(()=>{
+        AOS.init({})
+    },[])
     const classes = useStyles()
     return (
         <div className={classes.container}>
             <Box>
-                <Typography className={classes.title}>
+                <Typography className={classes.title} data-aos='zoom-in'>
                     Portfolio
                 </Typography>
             </Box>
             <Box>
-                <Typography className={classes.heading}>
+                <Typography className={classes.heading} data-aos='fade-up-right'>
                     Web Applications
                 </Typography>
                 <Grid container spacing={3} direction="row" justify="center" alignItems="center">
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={quiz} title='Quiz App' />
@@ -132,7 +137,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={expense} title='Expense Tracker App' />
@@ -152,7 +157,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={covid} title='Covid Tracker App' />
@@ -173,7 +178,7 @@ const Cards = () => {
                         </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={chat} title='Chat App' />
@@ -193,7 +198,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={todo2} title='Todo App' />
@@ -213,7 +218,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={chatreact} title='Chat App' />
@@ -233,7 +238,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={totoreact} title='Todo App' />
@@ -253,7 +258,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={calculator} title='Calculator App' />
@@ -273,7 +278,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={stopwatch} title='stopwatch App' />
@@ -296,11 +301,11 @@ const Cards = () => {
                 </Grid>
             </Box>
             <Box>
-                <Typography className={classes.heading}>
+                <Typography className={classes.heading} data-aos='fade-up-right'>
                     Websites
                 </Typography>
                 <Grid container spacing={3} direction="row" justify="center" alignItems="center">
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia component='img' image={classified} title='Classified Ad website' className={classes.media} />
@@ -320,7 +325,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={mutify} title='Mutify Website' />
@@ -340,7 +345,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={shoestore} title='Shoe Store' />
@@ -360,7 +365,7 @@ const Cards = () => {
                             </CardActions>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    <Grid item xs={12} sm={6} md={4} data-aos='zoom-in' >
                         <Card className={classes.card}>
                             <CardActionArea>
                                 <CardMedia className={classes.media} component='img' image={restaraunt} title='Restaurant' />
@@ -382,8 +387,8 @@ const Cards = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <Box className={classes.btnContainer}>
-                <Typography className={classes.contact}>
+            <Box className={classes.btnContainer} >
+                <Typography data-aos='slide-right' className={classes.contact}>
                     Connect Now
                 </Typography>
                 <Button className={classes.linkBtn} variant='contained' endIcon={<PhoneIphoneIcon className={classes.icon} />}><Link className={classes.link} to='/contact'>Contact</Link></Button>

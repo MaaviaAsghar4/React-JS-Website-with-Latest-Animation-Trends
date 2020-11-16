@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { makeStyles } from '@material-ui/core/styles'
 import { Avatar, Box, Typography } from '@material-ui/core'
 import fiverr from '../../images/fiverr.png'
@@ -27,9 +29,13 @@ const useStyles = makeStyles({
     },
 })
 const Connect = () => {
+
+    useEffect(()=>{
+        AOS.init({})
+    },[])
     const classes = useStyles();
     return (
-        <div className={classes.container}>
+        <div className={classes.container} data-aos='slide-left'>
             <Typography className={classes.title}>
                 Connect Now
             </Typography>

@@ -138,7 +138,7 @@ const Project = () => {
                     </Card>
                 </Grid>
             </Grid>
-            <Box className={classes.btnContainer} data-aos='flip-down'>
+            <Box className={classes.btnContainer} data-aos='flip-down' data-aos-easing='ease-in-out'>
                 <Button className={classes.linkBtn} variant='contained' endIcon={<NearMeIcon className={classes.icon} />}><Link className={classes.link} to='/portfolio'>More</Link></Button>
             </Box>
         </Box>
